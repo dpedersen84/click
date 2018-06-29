@@ -1,4 +1,5 @@
 import React from "react";
+import "./Jumbotron.css";
 
 class Jumbotron extends React.Component {
     render() {
@@ -8,7 +9,7 @@ class Jumbotron extends React.Component {
                     <div className="jumbotron">
                         <h1>Clicky Game!</h1>
                         <p>
-                            Click on the image to get points!  Do not click an image twice!
+                            Click on the image to get points!  Do not click an image twice or you will lose!
                         </p>
                     </div>
                 </div>
