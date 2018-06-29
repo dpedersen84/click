@@ -1,22 +1,26 @@
 import React from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
-const Navbar = props => {
-
-    <nav className="navbar navbar-expand-lg navbar-light bg-light">
-    
-    <Link className="navbar-brand" to="/">
-        Clicky Game!
-    </Link>
-    
-    
-    
-    
-    </nav>
-
-
-
-
-}
+class Navbar extends React.Component {
+    render() {
+        return (
+          <div>
+            <nav class="navbar navbar-default">
+              <div class="container-fluid">
+                <div class="navbar-header">
+                  <a class="navbar-brand" href="/">Clicky Game</a>
+                </div>
+                  <ul class="nav navbar-nav">
+                    <li class="active"><a href="/">Home</a></li>
+                    <li><a href="/">Page 1</a></li>
+                    <li><a href="/">Page 2</a></li>
+                    <li><a href="/">Page 3</a></li>
+                  </ul>
+              </div>
+            </nav>
+          </div>    
+        )
+    }
+};
 
 export default Navbar;
