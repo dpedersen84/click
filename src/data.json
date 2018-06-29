@@ -1,0 +1,74 @@
+[
+    {
+        "id": 1,
+        "name": "Di Sect",
+        "image": "../../images/1.jpg"
+        
+    },
+    {
+        "id": 2,
+        "name": "Peter Puker",
+        "image": "../../images/2.jpg"
+        
+    },
+    {
+        "id": 3,
+        "name": "Britney Shears",
+        "image": "../../images/3.jpg"
+        
+    },
+    {
+        "id": 4,
+        "name": "Anna Banana",
+        "image": "../../images/4.jpg"
+        
+    },
+    {
+        "id": 5,
+        "name": "Adam Bomb",
+        "image": "../../images/5.jpg"
+        
+    },
+    {
+        "id": 6,
+        "name": "April Showers",
+        "image": "../../images/6.jpg"
+        
+    },
+    {
+        "id": 7,
+        "name": "Greaser Greg",
+        "image": "../../images/7.jpg"
+        
+    },
+    {
+        "id": 8,
+        "name": "Ali Gator",
+        "image": "../../images/8.jpg"
+        
+    },
+    {
+        "id": 9,
+        "name": "Messy Tessie",
+        "image": "../../images/9.jpg"
+        
+    },
+    {
+        "id": 10,
+        "name": "Nat Nerd",
+        "image": "../../images/10.jpg"
+        
+    },
+    {
+        "id": 11,
+        "name": "Reese Pieces",
+        "image": "../../images/11.jpg"
+        
+    },
+    {
+        "id": 12,
+        "name": "Windy Winston",
+        "image": "../../images/12.jpg"
+        
+    }
+]
