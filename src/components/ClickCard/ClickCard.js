@@ -1,4 +1,5 @@
 import React from "react";
+import "./ClickCard.css";
 
 const ClickCard = props => (
 
