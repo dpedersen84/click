@@ -7,11 +7,20 @@ import cards from "../data.json";
 class Game extends Component {
 
     state = {
-        cards
+        cards,
+
     };
 
-    shuffleCard = () => {
+    // Shuffle cards on page load
+    componentDidMount = () => {
         this.setState({cards: _.shuffle(cards)})
+    }
+
+    // Shuffle cards and add to score when cards are clicked
+    handleClick = () => {
+        this.setState({cards: _.shuffle(cards)})
+        console.log("score");
+        this.setState({ score: this.state.score + 1 });
     }
 
     render() {
@@ -25,12 +34,9 @@ class Game extends Component {
                 key={card.id}
                 image={card.image}
                 name={card.name}
-                onClick={this.shuffleCard}
+                handleClick={this.handleClick}
                 />
             ))}
-            <button className="btn btn-danger" onClick={this.shuffleCard}>
-                Shuffle
-            </button>
             </div>
         </div>
         );

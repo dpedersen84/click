@@ -10,11 +10,12 @@ class Navbar extends React.Component {
   };
 
   handleScore = () => {
-
+    console.log("score");
+    this.setState({ score: this.state.score + 1 });
   }
 
   handleTopScore = () => {
-    
+
   }
 
   render() {
