@@ -10,7 +10,7 @@ class Game extends Component {
     state = {
         cards,
         score: 0,
-        topScore: 0
+        topScore: 10
 
     };
 
@@ -24,8 +24,20 @@ class Game extends Component {
     handleClick = () => {
         this.setState({cards: _.shuffle(cards)})
         console.log("score");
-        this.setState({ score: this.state.score + 1 });
+        this.setState({ score: this.state.score += 1 });
         console.log(this.state.score);
+        
+        if (this.state.score > this.state.topScore) {
+            this.setState({topScore: this.state.score});
+            console.log(this.state.topScore);
+        }
+
+    };
+
+    handleTopScore = () => {
+        if (this.props.score > this.props.topScore) {
+            this.setState({topScore: this.props.score});
+        }
     }
 
     render() {
@@ -34,6 +46,7 @@ class Game extends Component {
         <Jumbotron backgroundImage="https://i.imgur.com/qkdpN.jpg"/>
         <Scoreboard
             score= {this.state.score}
+            topScore = {this.state.topScore}
         />
             <div className="container cards">
                 {/* <div className="cards"> */}
