@@ -83,3 +83,9 @@ class Game extends Component {
 }
 
 export default Game;
+
+// To do:
+// 1. Register cards that have been clicked
+// 2. Update top score
+// 3. Game complete and game over functionality
+// 4. Final style changes
