@@ -4,7 +4,7 @@ class Scoreboard extends React.Component {
     render() {
         return (
             <div className="container" id="scores">
-                Score: {this.props.score} | Top Score: {this.props.topScore}
+                <h1>Score: {this.props.score} | Top Score: {this.props.topScore}</h1>
             </div>
         )
     }

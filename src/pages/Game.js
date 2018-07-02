@@ -48,20 +48,7 @@ class Game extends Component {
     render() {
         return (
             <div className="container" id="main">
-                <Alert 
-                    type="success"
-                    style={{ opacity: this.state.right ? 1 : 0, marginBottom: 10 }}
-                >
-                    {this.state.right}
-                </Alert>
-
-                <Alert 
-                    type="warning"
-                    style={{ opacity: this.state.wrong ? 1 : 0, marginBottom: 10 }}
-                >
-                    {this.state.wrong}
-                </Alert>
-
+                
                 <Scoreboard
                     score= {this.state.score}
                     topScore = {this.state.topScore}
@@ -77,6 +64,21 @@ class Game extends Component {
                         handleClick={this.handleClick}
                     />
                 ))}
+
+                <Alert 
+                    type="success"
+                    style={{ opacity: this.state.right ? 1 : 0, marginBottom: 5 }}
+                >
+                    {this.state.right}
+                </Alert>
+
+                <Alert 
+                    type="warning"
+                    style={{ opacity: this.state.wrong ? 1 : 0, marginBottom: 5 }}
+                >
+                    {this.state.wrong}
+                </Alert>
+
             </div>
         );
     }
