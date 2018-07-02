@@ -7,9 +7,9 @@ const Navbar = props => (
               <div className="navbar-header">
                 <a className="navbar-brand" href="/">Clicky Game</a>
               </div>
-                <ul className="nav navbar-text navbar-right">
-                    <a className="navbar-brand" href="/about">About</a>
-                </ul>
+                <div className="nav navbar-right">
+                    <a className="nav navbar-text" href="/about">About</a>
+                </div>
             </div>
           </nav>
 )
