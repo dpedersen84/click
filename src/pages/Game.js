@@ -36,6 +36,12 @@ class Game extends Component {
             this.setState({score: 0})
             // window.location.reload();
         }
+
+        if (this.state.score === 20) {
+            this.setState({success: "Already Clicked!!"})
+            // this.setState({score: 0})
+            // window.location.reload();
+        }
     };
 
     render() {
@@ -53,11 +59,11 @@ class Game extends Component {
                 />
                 {this.state.cards.map(card => (
                     <ClickCard  
-                    id={card.id}
-                    key={card.id}
-                    image={card.image}
-                    name={card.name}
-                    handleClick={this.handleClick}
+                        id={card.id}
+                        key={card.id}
+                        image={card.image}
+                        name={card.name}
+                        handleClick={this.handleClick}
                     />
                 ))}
             </div>
