@@ -34,35 +34,25 @@ class Game extends Component {
 
         // console.log("score");
         // console.log(this.state.score);
-
-
     };
 
     render() {
         return (
-        <div>
-            <Scoreboard
-                score= {this.state.score}
-                topScore = {this.state.topScore}
-            />
-                <div className="container" id="main">
-                    {/* <div className="row"> */}
-                        {/* <div className="col-md-8"> */}
-                        {/* <div className="cards"> */}
-                            {this.state.cards.map(card => (
-                                <ClickCard  
-                                id={card.id}
-                                key={card.id}
-                                image={card.image}
-                                name={card.name}
-                                handleClick={this.handleClick}
-                                />
-                            ))}
-                        {/* </div> */}
-                        {/* </div> */}
-                    {/* </div>        */}
-                </div>
-        </div>
+            <div className="container" id="main">
+                <Scoreboard
+                    score= {this.state.score}
+                    topScore = {this.state.topScore}
+                />
+                {this.state.cards.map(card => (
+                    <ClickCard  
+                    id={card.id}
+                    key={card.id}
+                    image={card.image}
+                    name={card.name}
+                    handleClick={this.handleClick}
+                    />
+                ))}
+            </div>
         );
     }
 }
