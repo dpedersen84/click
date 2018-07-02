@@ -1,4 +1,11 @@
 .footer {
-    margin-bottom: -1000;
+    /* margin-bottom: -1000; */
     color: red;
+    height: 200px;
+    background-color: #333
+}
+
+.navbar {
+    background-color: #333
+    height 200px;
 }
