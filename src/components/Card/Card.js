@@ -1,7 +1,7 @@
 import React from "react";
-import "./ClickCard.css";
+import "./Card.css";
 
-const ClickCard = props => (
+const Card = props => (
     <div
         className="card"
         style={{
@@ -17,4 +17,4 @@ const ClickCard = props => (
         
 );
 
-export default ClickCard;
+export default Card;
