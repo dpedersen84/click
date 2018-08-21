@@ -12,43 +12,106 @@ class Game extends Component {
         cards,
         score: 0,
         topScore: 10,
+        currentCard: "",
         cardsPicked: [],
-        clicked: false,
-        right: "",
-        wrong: "",
+        gameOver: false,
+        winner: false,
 
     };
 
-    // Shuffle cards on page load
     componentDidMount = () => {
-        this.setState({cards: _.shuffle(cards)})
+        console.log(this.state)
+        this.shuffleCards();
+        console.log("Starting Score:", this.state.score)
+        console.log("Top Score:", this.state.topScore)
     }
 
-    // Shuffle cards and add to score when cards are clicked
     handleClick = (id) => {
+        console.log(id)
 
-        const thisCard = this.state.cards.filter(card => card.id === id)
-        console.log(thisCard);
+        if (this.state.cardsPicked.includes(id)) {
+            this.loseGame();
+        } else {
+            this.shuffleCards();
+            this.updateScore();
 
-        const cardPicked = this.state.cards.filter(card => card.clicked === true)
-        console.log(cardPicked);
+            this.state.cardsPicked.push(id)
 
+            console.log(this.state.cardsPicked)
+        }
+    };
+    
+    shuffleCards = () => {
         this.setState({cards: _.shuffle(cards)})
-        this.setState({ score: this.state.score + 1 });
+    };
 
-        if (this.state.score === 12) {
-            this.setState({right: "Victory!"})
+    updateScore = () => {
+        let newScore = this.state.score + 1
+        console.log("new score", newScore)
+        this.setState({ score: newScore })
+        
+        if (newScore > this.state.topScore) {
+            console.log("new top score")
         }
+        if (newScore === 3) {
+            this.winGame()
+        }
+    };
 
-        if (this.state.clicked === true) {
-            this.setState({wrong: "Already Clicked!!"})
-        }
+    gameRestart = () => {
+        this.setState({ winner: false })
+        this.setState({ gameOver: false })
+        this.scoreReset()
+        this.cardsPickedReset()
+        this.shuffleCards()
+        console.log("New Game!")
+    };
+
+    loseGame = () => {
+        console.log("Game Over")
+        this.setState({ gameOver: true })
+        // this.gameRestart();
+    }
+
+    winGame = () => {
+        console.log("Winner!")
+        this.setState({ winner: true })
+        // this.gameRestart();
+    }
+
+    scoreReset = () => {
+        this.setState({ score: 0})
+    };
+
+    cardsPickedReset = () => {
+        this.setState({ cardsPicked: [] })
     };
 
     render() {
         return (
             <div className="container" id="main">
-                
+                <Alert 
+                    type="success"
+                    style={{ opacity: this.state.winner ? 1 : 0, marginBottom: 5 }}
+                >
+                    Winner!
+                </Alert>
+
+                <Alert 
+                    type="warning"
+                    style={{ opacity: this.state.gameOver ? 1 : 0, marginBottom: 5 }}
+                >
+                    Game Over!
+                </Alert>
+                <div>
+                    <button 
+                        className="btn btn-danger" 
+                        style={{ opacity: this.state.gameOver || this.state.winner ? 1 : 0, marginBottom: 5 }}
+                        onClick={ () => this.gameRestart() }
+                    >
+                    New Game
+                    </button>
+                </div>
                 <Scoreboard
                     score= {this.state.score}
                     topScore = {this.state.topScore}
@@ -61,23 +124,14 @@ class Game extends Component {
                         image={card.image}
                         name={card.name}
                         clicked={card.clicked}
-                        handleClick={this.handleClick}
+                        handleClick={() => this.handleClick(card.id)}
+                        // style={{ opacity: this.state.gameOver || this.state.winner ? 0 : 1 }}
                     />
                 ))}
 
-                <Alert 
-                    type="success"
-                    style={{ opacity: this.state.right ? 1 : 0, marginBottom: 5 }}
-                >
-                    {this.state.right}
-                </Alert>
+                
 
-                <Alert 
-                    type="warning"
-                    style={{ opacity: this.state.wrong ? 1 : 0, marginBottom: 5 }}
-                >
-                    {this.state.wrong}
-                </Alert>
+                
 
             </div>
         );
