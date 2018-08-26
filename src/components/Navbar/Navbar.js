@@ -2,15 +2,21 @@ import React from "react";
 import "./Navbar.css";
 
 const Navbar = props => (
-          <nav className="navbar navbar-default navbar-fixed-top">
-            <div className="container-fluid">
-              <div className="navbar-header">
-                <a className="navbar-brand" href="/">GPK</a>
-              </div>
-                <div className="nav navbar-right">
-                    <a className="nav navbar-text" href="#">About</a>
-                </div>
-            </div>
+          <nav className="navbar">
+
+            <ul>
+              <li className="brand">
+                <a href="/">Click</a>
+              </li>
+              <li>
+                Message goes here
+              </li>
+              <li>
+                Score: {props.score} | Top Score: {props.topScore}
+              </li>
+                
+            </ul>
+
           </nav>
 )
 
