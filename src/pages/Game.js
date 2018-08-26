@@ -4,7 +4,6 @@ import Scoreboard from "../components/Scoreboard";
 import Card from "../components/Card";
 import cards from "../data.json";
 import Alert from "../components/Alert";
-import "./style.css";
 
 class Game extends Component {
 
