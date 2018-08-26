@@ -3,7 +3,7 @@ import _ from "underscore";
 import Scoreboard from "../components/Scoreboard";
 import Card from "../components/Card";
 import cards from "../data.json";
-import Alert from "../components/Alert";
+// import Alert from "../components/Alert";
 
 class Game extends Component {
 
@@ -89,7 +89,7 @@ class Game extends Component {
     render() {
         return (
             <div className="container" id="main">
-                <Alert 
+                {/* <Alert 
                     type="success"
                     style={{ opacity: this.state.winner ? 1 : 0, marginBottom: 5 }}
                 >
@@ -101,8 +101,8 @@ class Game extends Component {
                     style={{ opacity: this.state.gameOver ? 1 : 0, marginBottom: 5 }}
                 >
                     Game Over!
-                </Alert>
-                <div>
+                </Alert> */}
+                {/* <div>
                     <button 
                         className="btn btn-danger" 
                         style={{ opacity: this.state.gameOver || this.state.winner ? 1 : 0, marginBottom: 5 }}
@@ -114,7 +114,7 @@ class Game extends Component {
                 <Scoreboard
                     score= {this.state.score}
                     topScore = {this.state.topScore}
-                />
+                /> */}
 
                 {this.state.cards.map(card => (
                     <Card  

@@ -4,7 +4,7 @@
     position: fixed;
     width: 100%;
     color: white;
-    font-size: 30px;
+    font-size: calc(10px + (24 - 10) * (100vw - 320px) / (1200 - 400));
     z-index: 99;
     white-space: nowrap;
 }
@@ -23,6 +23,28 @@
 
 .navbar a {
     text-decoration: none;
-    color: orangered;
+    color: whitesmoke;
     font-weight: 900;
+}
+
+.brand {
+    font-family: 'Coda Caption', sans-serif;
+}
+
+.text, .score {
+    font-family: 'Karla', sans-serif;
+}
+
+@media (max-width: 420px) {
+    .navbar li:first-child {
+        width: 25%;
+    }
+
+    .navbar li:nth-child(2) {
+        width: 35%;
+    }
+
+    .navbar li:last-child {
+        width: 40%;
+    }
 }

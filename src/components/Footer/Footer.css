@@ -1,11 +1,21 @@
 .footer {
-    /* margin-bottom: -1000; */
-    color: red;
-    height: 200px;
-    background-color: #333
+    color: black;
+    height: 100px;
+    margin-top: 150px;
+    background: #6956AF;
 }
 
-.navbar {
-    background-color: #333
-    height 200px;
+li {
+    display: inline-block;
+    padding-top: 5px
+}
+
+.contact {
+    font-family: 'Karla', sans-serif;
+}
+
+.contact a{
+    /* text-decoration: none; */
+    color: white;
+    font-size: 20px;
 }

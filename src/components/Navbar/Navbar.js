@@ -8,10 +8,10 @@ const Navbar = props => (
               <li className="brand">
                 <a href="/">Click</a>
               </li>
-              <li>
-                Message goes here
+              <li className="text">
+                Don't click an image twice!
               </li>
-              <li>
+              <li className="score">
                 Score: {props.score} | Top Score: {props.topScore}
               </li>
                 

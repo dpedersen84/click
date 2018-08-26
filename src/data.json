@@ -82,5 +82,47 @@
         "image": "../../images/12.jpg",
         "clicked": false
         
+    },
+    {
+        "id": 13,
+        "name": "Con Vic",
+        "image": "../../images/13.jpg",
+        "clicked": false
+        
+    },
+    {
+        "id": 14,
+        "name": "Dam Dan",
+        "image": "../../images/14.jpg",
+        "clicked": false
+        
+    },
+    {
+        "id": 15,
+        "name": "Creamed Gene",
+        "image": "../../images/15.jpg",
+        "clicked": false
+        
+    },
+    {
+        "id": 16,
+        "name": "Ball'n Shane",
+        "image": "../../images/16.jpg",
+        "clicked": false
+        
+    },
+    {
+        "id": 17,
+        "name": "Julius Sneezer",
+        "image": "../../images/17.jpg",
+        "clicked": false
+        
+    },
+    {
+        "id": 18,
+        "name": "Chow Maynard",
+        "image": "../../images/18.jpg",
+        "clicked": false
+        
     }
 ]
