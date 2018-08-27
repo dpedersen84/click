@@ -6,13 +6,14 @@ import cards from "../data.json";
 // import Alert from "../components/Alert";
 import Navbar from "../components/Navbar";
 import Jumbotron from "../components/Jumbotron";
+import Footer from "../components/Footer";
 
 class Game extends Component {
 
     state = {
         cards,
         score: 0,
-        topScore: 10,
+        topScore: 0,
         currentCard: "",
         cardsPicked: [],
         gameOver: false,
@@ -61,6 +62,7 @@ class Game extends Component {
 
         
         if (newScore > this.state.topScore) {
+            this.setState({ topScore: newScore})
             console.log("new top score")
         }
         if (newScore === 18) {
@@ -158,6 +160,7 @@ class Game extends Component {
                         
 
                     </div>
+                    <Footer />
             </div>
         );
     }

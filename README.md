@@ -1,7 +1,33 @@
-# Garbage Pail Kids Memory Game
+# Click
 
-This memory game was built using React.js and Node.js
+Click is a memory game developed with React.js. 
 
-Currently under development...
+## Getting Started
 
-Copyright 2018 Dan Pedersen
+### Prerequisites
+
+To use this repo, you will first need to install [node](https://nodejs.org/en/) and [MongoDB](https://docs.mongodb.com/manual/installation/).
+
+### Installing
+
+1. Install the required node packages
+
+```
+npm install
+```
+
+2. Start the application
+
+```
+npm start
+```
+
+## Contributors
+
+* Dan Pedersen
+
+## Built With
+
+
+* [React](http://reactjs.org)
+* [Underscore] (https://underscorejs.org/)
