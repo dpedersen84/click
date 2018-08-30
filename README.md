@@ -1,6 +1,8 @@
 # Click
 
-Click is a memory game developed with React.js. 
+Click is a memory game developed with React.js.
+
+[Sample App](https://click-app-dp.herokuapp.com/)
 
 ## Getting Started
 
