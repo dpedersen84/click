@@ -1,9 +1,8 @@
 import React, {Component} from "react";
 import _ from "underscore";
-// import Scoreboard from "../components/Scoreboard";
 import Card from "../components/Card";
 import cards from "../data.json";
-// import Alert from "../components/Alert";
+import Alert from "../components/Alert";
 import Navbar from "../components/Navbar";
 import Jumbotron from "../components/Jumbotron";
 import Footer from "../components/Footer";
@@ -16,8 +15,10 @@ class Game extends Component {
         topScore: 0,
         currentCard: "",
         cardsPicked: [],
-        gameOver: false,
-        winner: false,
+        modalType: "",
+        alert: false,
+        message: "",
+        game: true,
 
     };
 
@@ -73,32 +74,36 @@ class Game extends Component {
 
     gameRestart = () => {
         console.log("New Game!")
-
-        // this.setState({ winner: false })
-        // this.setState({ gameOver: false })
+        this.setState({ game: true })
+        this.setState({ alert: false })
+        this.setState({ modalType: "" })
 
         this.scoreReset()
         this.cardsPickedReset()
         this.shuffleCards()
-        // this.setState({ score: 0})
-        // console.log("Top Score:", this.state.topScore)
-        // console.log(this.state)
     };
 
     loseGame = () => {
-        alert("Game Over")
+        // alert("Game Over")
         console.log("Game Over")
         console.log("===============================")
-        // this.setState({ gameOver: true })
-        this.gameRestart();
+        this.setState({ game: false })
+        this.setState({ alert: true })
+        this.setState({ modalType: "warning" })
+        this.setState({ message: "You Lose!" })
+
+        // this.gameRestart();
     }
 
     winGame = () => {
-        alert("Winner!")
+        // alert("Winner!")
         console.log("Winner!")
         console.log("===============================")
-        // this.setState({ winner: true })
-        this.gameRestart();
+        this.setState({ alert: true })
+        this.setState({ modalType: "success" })
+        this.setState({ message: "You Win!" })
+        
+        // this.gameRestart();
     }
 
     scoreReset = () => {
@@ -115,34 +120,19 @@ class Game extends Component {
             <div>
                 <Navbar score={this.state.score} topScore={this.state.topScore}/>
                 <Jumbotron backgroundImage="https://i.imgur.com/g2EkSbL.jpg"/>
-                    <div className="container" id="main">
-                        {/* <Alert 
-                            type="success"
-                            style={{ opacity: this.state.winner ? 1 : 0, marginBottom: 5 }}
-                        >
-                            Winner!
-                        </Alert>
-
+                    <div className="text-center">
                         <Alert 
-                            type="warning"
-                            style={{ opacity: this.state.gameOver ? 1 : 0, marginBottom: 5 }}
-                        >
-                            Game Over!
-                        </Alert> */}
-                        {/* <div>
-                            <button 
-                                className="btn btn-danger" 
-                                style={{ opacity: this.state.gameOver || this.state.winner ? 1 : 0, marginBottom: 5 }}
-                                onClick={ () => this.gameRestart() }
+                                type={this.state.modalType}
+                                style={{ opacity: this.state.alert ? 1 : 0, marginBottom: 5 }}
+                                onClick={() => this.gameRestart()}
                             >
-                            New Game
-                            </button>
-                        </div>
-                        <Scoreboard
-                            score= {this.state.score}
-                            topScore = {this.state.topScore}
-                        /> */}
-
+                                <h3> { this.state.message } </h3>
+                                <div>
+                                    <button className="btn btn-primary" onClick={()=>this.gameRestart()}>New Game</button>
+                                </div>
+                        </Alert>
+                    </div>
+                    <div className="container" id="main" style={{ opacity: this.state.game ? 1 : 0 }}>
                         {this.state.cards.map(card => (
                             <Card  
                                 id={card.id}
@@ -154,22 +144,11 @@ class Game extends Component {
                                 // style={{ opacity: this.state.gameOver || this.state.winner ? 0 : 1 }}
                             />
                         ))}
-
-                        
-
-                        
-
                     </div>
-                    <Footer />
+                <Footer />
             </div>
         );
     }
 }
 
 export default Game;
-
-// To do:
-// 1. Register cards that have been clicked
-// 2. Update top score
-// 3. Game complete and game over functionality
-// 4. Final style changes
