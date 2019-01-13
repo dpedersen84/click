@@ -1,8 +1,8 @@
 # Click
 
-Click is a memory game developed with React.js.
+Click is a memory game developed with React.js. Try to beat your high score!
 
-[Sample App](https://click-app-dp.herokuapp.com/)
+[Application](https://click-app-dp.herokuapp.com/)
 
 ## Getting Started
 
@@ -22,9 +22,9 @@ npm start
 
 ## Contributors
 
-* Dan Pedersen
+- Dan Pedersen
 
 ## Built With
 
-* [React](http://reactjs.org)
-* [Underscore] (https://underscorejs.org/)
+- [React](http://reactjs.org)
+- [Underscore](https://underscorejs.org/)
